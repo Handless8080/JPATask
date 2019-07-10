@@ -7,7 +7,6 @@ import javax.persistence.*;
 public class TrainingCourse {
     private Integer id;
     private String name;
-    private Integer teacherId;
 
     private Teacher teacher;
 
@@ -29,15 +28,6 @@ public class TrainingCourse {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    @Column(name = "teacher_id", nullable = false)
-    public Integer getTeacherId() {
-        return teacherId;
-    }
-
-    public void setTeacherId(Integer teacherId) {
-        this.teacherId = teacherId;
     }
 
     @ManyToOne(fetch = FetchType.LAZY)

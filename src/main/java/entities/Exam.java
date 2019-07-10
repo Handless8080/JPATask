@@ -8,7 +8,6 @@ import java.util.Date;
 public class Exam {
     private Integer id;
     private Date date;
-    private Integer teacherId;
     private Integer trainingCourseId;
 
     private Teacher teacher;
@@ -31,15 +30,6 @@ public class Exam {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-    @Column(name = "teacher_id", nullable = false)
-    public Integer getTeacherId() {
-        return teacherId;
-    }
-
-    public void setTeacherId(Integer teacherId) {
-        this.teacherId = teacherId;
     }
 
     @Column(name = "training_course_id", nullable = false)

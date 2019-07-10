@@ -6,11 +6,8 @@ import javax.persistence.*;
 @Table(name = "exam_result")
 public class ExamResult {
     private Integer id;
-    private Integer teacherId;
-    private Integer studentId;
     private Byte result;
     private String note;
-    private Integer examId;
 
     private Student student;
     private Teacher teacher;
@@ -25,24 +22,6 @@ public class ExamResult {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    @Column(name = "teacher_id", nullable = false)
-    public Integer getTeacherId() {
-        return teacherId;
-    }
-
-    public void setTeacherId(Integer teacherId) {
-        this.teacherId = teacherId;
-    }
-
-    @Column(name = "student_id", nullable = false)
-    public Integer getStudentId() {
-        return studentId;
-    }
-
-    public void setStudentId(Integer studentId) {
-        this.studentId = studentId;
     }
 
     @Column(name = "result", nullable = false)
@@ -61,15 +40,6 @@ public class ExamResult {
 
     public void setNote(String note) {
         this.note = note;
-    }
-
-    @Column(name = "exam_id", nullable = false)
-    public Integer getExamId() {
-        return examId;
-    }
-
-    public void setExamId(Integer examId) {
-        this.examId = examId;
     }
 
     @ManyToOne(fetch = FetchType.LAZY)

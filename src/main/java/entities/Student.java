@@ -86,7 +86,7 @@ public class Student {
         this.studentResultSet = studentResultSet;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "studentId", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
     public Set<ExamResult> getExamResultSet() {
         return examResultSet;
     }

@@ -10,13 +10,10 @@ import java.time.LocalDate;
 @Table(name = "student_result")
 public class StudentResult {
     private StudentResultKey id;
-    private Integer examId;
     private Byte result;
     private LocalDate date;
     private String note;
 
-    private Student student;
-    private TrainingCourse trainingCourse;
     private Exam exam;
 
     @EmbeddedId
@@ -26,15 +23,6 @@ public class StudentResult {
 
     public void setId(StudentResultKey id) {
         this.id = id;
-    }
-
-    @Column(name = "exam_id")
-    public Integer getExamId() {
-        return examId;
-    }
-
-    public void setExamId(Integer examId) {
-        this.examId = examId;
     }
 
     @Column(name = "result", nullable = false)
@@ -63,26 +51,6 @@ public class StudentResult {
 
     public void setNote(String note) {
         this.note = note;
-    }
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "student_id", insertable = false, updatable = false)
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
-    }
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "training_course_id", insertable = false, updatable = false)
-    public TrainingCourse getTrainingCourse() {
-        return trainingCourse;
-    }
-
-    public void setTrainingCourse(TrainingCourse trainingCourse) {
-        this.trainingCourse = trainingCourse;
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
